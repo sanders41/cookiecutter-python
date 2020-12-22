@@ -131,8 +131,14 @@ def test_license(project_default, license, tmp_path):
 
     file_path = tmp_path.joinpath(project["project_slug"]).joinpath("LICENSE")
 
+    with open(file_path, "r") as f:
+        data = f.read()
+
+    license_string_in_file = [s in data for s in license]
+
     assert file_path.exists()
     assert no_curlies(file_path)
+    assert any(license_string_in_file)
 
 
 def test_no_license(project_default, tmp_path):
