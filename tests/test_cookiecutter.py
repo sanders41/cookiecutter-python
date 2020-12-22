@@ -180,17 +180,6 @@ def test_pyproject(project_default, tmp_path):
     assert no_curlies(file_path)
 
 
-def test_poetry_lock(project_default, tmp_path):
-    cookiecutter(
-        str(COOKIECUTTER_ROOT), no_input=True, extra_context=project_default, output_dir=tmp_path
-    )
-
-    out_dir = tmp_path / project_default["project_slug"]
-
-    file_path = out_dir / "poetry.lock"
-    assert file_path.exists()
-
-
 def test_pre_commit(project_default, tmp_path):
     cookiecutter(
         str(COOKIECUTTER_ROOT), no_input=True, extra_context=project_default, output_dir=tmp_path
