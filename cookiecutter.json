@@ -1,0 +1,14 @@
+{
+  "project_name": "",
+  "project_slug": "{{cookiecutter.project_name.lower().strip().replace(' ', '-')}}",
+  "source_dir": "{{cookiecutter.project_name.lower().strip().replace(' ', '_')}}",
+  "project_description": "",
+  "creator": "",
+  "creator_email": "",
+  "license": ["MIT", "Apache 2.0", "GNU General Public License v3.0", "No License"],
+  "copyright_year": "",
+  "python_version": "3.9",
+  "github_action_python_test_versions": "3.8, 3.9",
+  "tox_python_versions": "py38, py39",
+  "max_line_length": 100
+}
