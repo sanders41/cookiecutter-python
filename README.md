@@ -79,3 +79,9 @@ git branch -m master main
 ```
 
 Now the project is ready to use.
+
+## Change log
+
+### 0.1.1
+
+- pre-commit updated to version 2.9.3
