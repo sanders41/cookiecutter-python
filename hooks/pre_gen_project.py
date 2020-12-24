@@ -2,23 +2,18 @@ import sys
 
 
 def validate():
-    project_name = "{{ cookiecutter.project_name }}"
-    creator = "{{ cookiecutter.creator }}"
-    creator_email = "{{ cookiecutter.creator_email }}"
+    exit_one_checks = [
+        ("{{ cookiecutter.project_name }}", "project name"),
+        ("{{ cookiecutter.creator }}", "creator"),
+        ("{{ cookiecutter.creator_email }}", "creator email address"),
+        ("{{ cookiecutter.license }}", "license"),
+    ]
+
+    for check in exit_one_checks:
+        exit_one(check[0], check[1])
+
     license = "{{ cookiecutter.license }}"
     copyright_year = "{{ cookiecutter.copyright_year }}"
-
-    if not project_name.strip():
-        print("You must specify a project name to use this template.")  # noqa: T001
-        sys.exit(1)
-
-    if not creator.strip():
-        print("You must specify a creator to use this template.")  # noqa: T001
-        sys.exit(1)
-
-    if not creator_email.strip():
-        print("You must specify a creator email address to use this template.")  # noqa: T001
-        sys.exit(1)
 
     if license == "MIT" and not copyright_year.strip():
         print("You must specify a copyright year for the MIT license")  # noqa: T001
@@ -40,6 +35,24 @@ def validate():
         except ValueError:
             print(year_error_msg)  # noqa: T001
             sys.exit(3)
+
+    min_python_version = "{{ cookiecutter.min_python_version }}"
+    github_action_python_test_versions = [
+        x.strip() for x in "{{ cookiecutter.github_action_python_test_versions }}".split(",")
+    ]
+    github_action_python_test_versions.sort()
+
+    if float(github_action_python_test_versions[0]) < float(min_python_version):
+        print(  # noqa: T001
+            "The minimum Python version is greater than the lowest version used in the github actions tests"  # noqa: E501
+        )
+        sys.exit(4)
+
+
+def exit_one(text_check, field_name):
+    if not text_check.strip():
+        print(f"You must specify a {field_name} to use this template.")  # noqa: T001
+        sys.exit(1)
 
 
 if __name__ == "__main__":
