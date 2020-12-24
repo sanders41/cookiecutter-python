@@ -243,3 +243,21 @@ def test_workflow_testing(project_default, tmp_path):
 
     file_path = out_dir / ".github/workflows/testing.yaml"
     assert file_path.exists()
+
+
+def test_python_min_version(tmp_path):
+    project = {
+        "project_name": "Test Project",
+        "creator": "Some Person",
+        "creator_email": "tester@person.com",
+        "license": "No License",
+        "min_python_version": 3.9,
+        "github_action_python_test_versions": "3.8, 3.9",
+    }
+
+    with pytest.raises(FailedHookException):
+        cookiecutter(
+            str(COOKIECUTTER_ROOT), no_input=True, extra_context=project, output_dir=tmp_path
+        )
+
+        assert sys.exit == 4
