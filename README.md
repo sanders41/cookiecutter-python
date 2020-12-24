@@ -85,3 +85,9 @@ Now the project is ready to use.
 ### 0.1.1
 
 - pre-commit updated to version 2.9.3
+
+### 0.1.2
+
+- min_python_version added to the project creation
+- Check to make sure the minimum python version isn't greater than the minimum version used in
+  the CI tests
