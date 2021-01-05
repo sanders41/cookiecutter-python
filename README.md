@@ -85,6 +85,10 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.1.4
+
+- Updated isort version
+
 ### 0.1.3
 
 - mypy check added to the default github actions linting checks
