@@ -35,4 +35,4 @@ jobs:
         poetry run flake8 {{cookiecutter.source_dir}} tests --count --exit-zero --max-complexity=10 --max-line-length=100 --statistics
     name: mypy check
       run: |
-        poetry run mypy split_schedule
+        poetry run mypy {{cookiecutter.source_dir}}

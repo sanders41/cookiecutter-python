@@ -85,6 +85,11 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.1.5
+
+- Fixed mypy directory in linting action
+- Updated isort version in pre-commmit-config
+
 ### 0.1.4
 
 - Updated isort version
