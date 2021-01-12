@@ -85,6 +85,10 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.1.6
+
+- Added .DS_Store and .swp files to gitignore
+
 ### 0.1.5
 
 - Fixed mypy directory in linting action
