@@ -85,6 +85,10 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.1.7
+
+- Update tox to version 3.21.0
+
 ### 0.1.6
 
 - Added .DS_Store and .swp files to gitignore
