@@ -85,6 +85,10 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.1.8
+
+- Update tox to version 3.21.1
+
 ### 0.1.7
 
 - Update tox to version 3.21.0
