@@ -85,6 +85,10 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.1.9
+
+- Python version added to name attribute in python setup for the testing CI action
+
 ### 0.1.8
 
 - Update tox to version 3.21.1
