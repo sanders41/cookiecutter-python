@@ -22,62 +22,65 @@ First make sure you have cookiecutter installed. Instructions for installing can
 
 Once cookiecutter is installed go to the directory where you want to create the project and run:
 
-```
+```zsh
 cookiecutter https://github.com/sanders41/cookiecutter-python
 ```
 
 You will be asked to fill in the following information:
-  -  project_name: The name of the project
-  -  project_slug: The development friendly name of the project. By default, based on the project name
-  -  source_dir: The name name of the source directory for the project. By default, based on the project name
-  -  project_description: A short discription of the purpose of the project [Optional]
-  -  creator: The full name of the project creator
-  -  creator_email: The email address for the creator
-  -  license: The license to use for the project. Select "No license" if no license should be included
-  -  copyright_year: The year to use for the copyright year in the license file. Required for MIT and GNU General Public License v3.0 licenses
-  -  python_version: The minimum version of Python that can be used for the project. By default 3.9 will be used.
-  -  github_action_python_test_versions: The versions of Python that should be used in the CI tests. By default "3.8, 3.9" is used
-  -  tox_python_version: The version of Python that tox should use for testing. By default py38, py39 is used
-  -  max_line_length: The maximum allowed line length. By default 100 is used
 
-Next create and activate a virtual environment
+- project_name: The name of the project
+- project_slug: The development friendly name of the project. By default, based on the project name
+- source_dir: The name name of the source directory for the project. By default, based on the project name
+- project_description: A short discription of the purpose of the project [Optional]
+- creator: The full name of the project creator
+- creator_email: The email address for the creator
+- license: The license to use for the project. Select "No license" if no license should be included
+- copyright_year: The year to use for the copyright year in the license file. Required for MIT and GNU General Public License v3.0 licenses
+- python_version: The minimum version of Python that can be used for the project. By default 3.9 will be used.
+- github_action_python_test_versions: The versions of Python that should be used in the CI tests. By default "3.8, 3.9" is used
+- tox_python_version: The version of Python that tox should use for testing. By default py38, py39 is used
+- max_line_length: The maximum allowed line length. By default 100 is used
 
-```
+Next create a virtual environment
+
+```zsh
 python3 -m venv venv
 ```
 
-```
+And activate the newly created virtual environment
+
+```zsh
 . venv/bin/activate
 ```
 
 With the virtual environment activated install the dependencies
 
-```
+```zsh
 poetry install
 ```
 
 Create a git repositry
 
-```
+```zsh
 git init
 ```
 
 Install the pre-commit hooks
 
-```
+```zsh
 pre-commit install
 ```
 
 Commit the files to git
 
-```
+```zsh
 git add .
 git commit -am 'Inital commit'
 ```
 
 Rename the master branch to main
 
-```
+```zsh
 git branch -m master main
 ```
 
