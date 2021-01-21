@@ -88,6 +88,11 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.1.10
+
+- pytest-cov updated to ^2.11.1
+- tox updated to ^3.21.2
+
 ### 0.1.9
 
 - Python version added to name attribute in python setup for the testing CI action
