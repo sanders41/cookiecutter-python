@@ -88,6 +88,10 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.1.11
+
+- mypy updated to 0.800
+
 ### 0.1.10
 
 - pytest-cov updated to ^2.11.1
