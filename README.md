@@ -88,6 +88,10 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.1.12
+
+- pytest updated to ^6.2.2
+
 ### 0.1.11
 
 - mypy updated to 0.800
