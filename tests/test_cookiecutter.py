@@ -246,18 +246,34 @@ def test_workflow_testing(project_default, tmp_path):
 
 
 def test_python_min_version(tmp_path):
-    project = {
-        "project_name": "Test Project",
-        "creator": "Some Person",
-        "creator_email": "tester@person.com",
-        "license": "No License",
-        "min_python_version": 3.9,
-        "github_action_python_test_versions": "3.8, 3.9",
-    }
-
     with pytest.raises(FailedHookException):
+        project = {
+            "project_name": "Test Project",
+            "creator": "Some Person",
+            "creator_email": "tester@person.com",
+            "license": "No License",
+            "min_python_version": 3.9,
+            "github_action_python_test_versions": "3.8, 3.9",
+        }
+
         cookiecutter(
             str(COOKIECUTTER_ROOT), no_input=True, extra_context=project, output_dir=tmp_path
         )
 
         assert sys.exit == 4
+
+
+@pytest.mark.parametrize("use_dependabot, expected", [("True", True), ("False", False)])
+def test_use_dependabot(project_default, use_dependabot, expected, tmp_path):
+    project = project_default
+    project["use_dependabot"] = use_dependabot
+
+    cookiecutter(str(COOKIECUTTER_ROOT), no_input=True, extra_context=project, output_dir=tmp_path)
+
+    file_path = tmp_path.joinpath(project["project_slug"]).joinpath(".github") / "dependabot.yaml"
+
+    if expected:
+        assert file_path.exists()
+        assert no_curlies(file_path)
+    else:
+        assert not file_path.exists()
