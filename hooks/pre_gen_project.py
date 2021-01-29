@@ -48,6 +48,10 @@ def validate():
         )
         sys.exit(4)
 
+    if "{{cookiecutter.use_dependabot}}" not in ["True", "False"]:
+        print("use_dependabot must be either True or False")  # noqa: T001
+        sys.exit(5)
+
 
 def exit_one(text_check, field_name):
     if not text_check.strip():

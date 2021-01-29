@@ -88,6 +88,10 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.2.0
+
+- Adding the options to use Dependabot
+
 ### 0.1.13
 
 - pre-commit updated to ^2.10.0
