@@ -88,6 +88,10 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.2.1
+
+- Bumping tox to ^3.21.4
+
 ### 0.2.0
 
 - Adding the options to use Dependabot
