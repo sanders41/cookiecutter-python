@@ -277,3 +277,20 @@ def test_use_dependabot(project_default, use_dependabot, expected, tmp_path):
         assert no_curlies(file_path)
     else:
         assert not file_path.exists()
+
+
+@pytest.mark.parametrize("use_continuous_deployment, expected", [("True", True), ("False", False)])
+def test_use_continuous_deployment(project_default, use_continuous_deployment, expected, tmp_path):
+    project = project_default
+    project["use_continuous_deployment"] = use_continuous_deployment
+
+    cookiecutter(str(COOKIECUTTER_ROOT), no_input=True, extra_context=project, output_dir=tmp_path)
+
+    file_path = tmp_path.joinpath(project["project_slug"]).joinpath(
+        ".github/workflows/pypi_publish.yaml"
+    )
+
+    if expected:
+        assert file_path.exists()
+    else:
+        assert not file_path.exists()

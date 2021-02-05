@@ -2,6 +2,8 @@ import shutil
 from pathlib import Path
 
 ROOT_DIR = Path().absolute()
+ACTIONS_DIR = ROOT_DIR.joinpath("actions")
+GITHUB_DIR = ROOT_DIR.joinpath(".github")
 
 
 def main() -> None:
@@ -10,17 +12,26 @@ def main() -> None:
     use_dependabot = "{{cookiecutter.use_dependabot}}" == "True"
     set_dependabot(use_dependabot)
 
+    use_continuous_deployment = "{{cookiecutter.use_continuous_deployment}}" == "True"
+    set_cd(use_continuous_deployment)
 
-def set_dependabot(use_dependabot: bool) -> None:
-    actions_dir = ROOT_DIR.joinpath("actions")
+    shutil.rmtree(ACTIONS_DIR)
 
-    if use_dependabot:
+
+def set_cd(use_continuous_deployment: bool) -> None:
+    if use_continuous_deployment:
         shutil.copy(
-            actions_dir.joinpath("dependabot.yaml"),
-            ROOT_DIR.joinpath(".github") / "dependabot.yaml",
+            ACTIONS_DIR / "pypi_publish.yaml",
+            GITHUB_DIR / "workflows" / "pypi_publish.yaml",
         )
 
-    shutil.rmtree(actions_dir)
+
+def set_dependabot(use_dependabot: bool) -> None:
+    if use_dependabot:
+        shutil.copy(
+            ACTIONS_DIR / "dependabot.yaml",
+            GITHUB_DIR / "dependabot.yaml",
+        )
 
 
 def set_license(license: str) -> None:

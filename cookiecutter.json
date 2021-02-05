@@ -12,5 +12,6 @@
   "github_action_python_test_versions": "3.8, 3.9",
   "tox_python_versions": "py38, py39",
   "max_line_length": 100,
-  "use_dependabot": true
+  "use_dependabot": true,
+  "use_continuous_deployment": false
 }
