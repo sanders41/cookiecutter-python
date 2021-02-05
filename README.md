@@ -88,6 +88,10 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.3.0
+
+- Adding an option to include a Continuous Deployment workflow to publish to PYPI
+
 ### 0.2.1
 
 - Bumping tox to ^3.21.4

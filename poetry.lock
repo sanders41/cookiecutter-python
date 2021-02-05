@@ -191,7 +191,7 @@ python-versions = "*"
 name = "isort"
 version = "5.7.0"
 description = "A Python utility / library to sort Python imports."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6,<4.0"
 
@@ -498,7 +498,7 @@ testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "c9aa92a4c9be9bebca5f5c87b41753bdcbc5a09c33777761f23eb84b384300df"
+content-hash = "335746f6dc9f914d8e88b59bb590b667f3ddf50dedf9d13701ff725c75a68227"
 
 [metadata.files]
 appdirs = [
