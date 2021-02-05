@@ -88,6 +88,10 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.4.0
+
+- Changed the Poetry install method in workflows
+
 ### 0.3.0
 
 - Adding an option to include a Continuous Deployment workflow to publish to PYPI
