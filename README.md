@@ -42,6 +42,7 @@ You will be asked to fill in the following information:
 - max_line_length: The maximum allowed line length. By default 100 is used
 - use_dependabot: Adds a GitHub action for dependabot: Default = True
 - use_continuous_deployment: Adds a workflow for continous deployment to pypi: Default = False
+- multi_os_ci: If True then CI is setup to run tests on Windows, Mac, and Linux. If False tests are only run on Linux: Default = False
 
 Next create a virtual environment
 
@@ -89,6 +90,10 @@ git branch -m master main
 Now the project is ready to use.
 
 ## Change log
+
+### 0.5.0
+
+- Added an option to run CI on Windows, Mac, and Linux
 
 ### 0.4.1
 
