@@ -40,6 +40,8 @@ You will be asked to fill in the following information:
 - github_action_python_test_versions: The versions of Python that should be used in the CI tests. By default "3.8, 3.9" is used
 - tox_python_version: The version of Python that tox should use for testing. By default py38, py39 is used
 - max_line_length: The maximum allowed line length. By default 100 is used
+- use_dependabot: Adds a GitHub action for dependabot: Default = True
+- use_continuous_deployment: Adds a workflow for continous deployment to pypi: Default = False
 
 Next create a virtual environment
 
@@ -87,6 +89,10 @@ git branch -m master main
 Now the project is ready to use.
 
 ## Change log
+
+### 0.4.1
+
+- Fixed CD action with new Poetry install method
 
 ### 0.4.0
 
