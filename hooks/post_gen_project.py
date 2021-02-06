@@ -15,6 +15,9 @@ def main() -> None:
     use_continuous_deployment = "{{cookiecutter.use_continuous_deployment}}" == "True"
     set_cd(use_continuous_deployment)
 
+    multi_os_ci = "{{cookiecutter.multi_os_ci}}" == "True"
+    set_multi_os_ci(multi_os_ci)
+
     shutil.rmtree(ACTIONS_DIR)
 
 
@@ -31,6 +34,15 @@ def set_dependabot(use_dependabot: bool) -> None:
         shutil.copy(
             ACTIONS_DIR / "dependabot.yaml",
             GITHUB_DIR / "dependabot.yaml",
+        )
+
+
+def set_multi_os_ci(multi_os_ci: bool) -> None:
+    if multi_os_ci:
+        shutil.copy(ACTIONS_DIR / "testing_all_os.yaml", GITHUB_DIR / "workflows" / "testing.yaml")
+    else:
+        shutil.copy(
+            ACTIONS_DIR / "testing_linux_only.yaml", GITHUB_DIR / "workflows" / "testing.yaml"
         )
 
 

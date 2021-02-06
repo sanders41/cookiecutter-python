@@ -294,3 +294,18 @@ def test_use_continuous_deployment(project_default, use_continuous_deployment, e
         assert file_path.exists()
     else:
         assert not file_path.exists()
+
+
+@pytest.mark.parametrize("multi_os_ci", [True, False, None])
+def test_multi_os_ci(project_default, multi_os_ci, tmp_path):
+    project = project_default
+    if multi_os_ci:
+        project["multi_os_ci"] = multi_os_ci
+
+    cookiecutter(str(COOKIECUTTER_ROOT), no_input=True, extra_context=project, output_dir=tmp_path)
+
+    file_path = tmp_path.joinpath(project["project_slug"]).joinpath(
+        ".github/workflows/testing.yaml"
+    )
+
+    assert file_path.exists()
