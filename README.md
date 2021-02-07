@@ -44,19 +44,21 @@ You will be asked to fill in the following information:
 - use_continuous_deployment: Adds a workflow for continous deployment to pypi: Default = False
 - multi_os_ci: If True then CI is setup to run tests on Windows, Mac, and Linux. If False tests are only run on Linux: Default = False
 
-Next create a virtual environment
+Next create a virtual environment and activate it. These two steps are optional, if you skip them Poetry will create and use it's own virtual environment.
+
+Create a virtual environment (optinal)
 
 ```zsh
 python3 -m venv venv
 ```
 
-And activate the newly created virtual environment
+Activate the virtual environment (optinal)
 
 ```zsh
 . venv/bin/activate
 ```
 
-With the virtual environment activated install the dependencies
+Install the dependencies
 
 ```zsh
 poetry install
@@ -81,7 +83,7 @@ git add .
 git commit -am 'Inital commit'
 ```
 
-Rename the master branch to main
+Rename the master branch to main. This step is optional and only needs to be done if you haven't set your global default branch name to main.
 
 ```zsh
 git branch -m master main
