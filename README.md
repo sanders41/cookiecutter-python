@@ -46,13 +46,13 @@ You will be asked to fill in the following information:
 
 Next create a virtual environment and activate it. These two steps are optional, if you skip them Poetry will create and use it's own virtual environment.
 
-Create a virtual environment (optinal)
+Create a virtual environment (optional)
 
 ```zsh
 python3 -m venv venv
 ```
 
-Activate the virtual environment (optinal)
+Activate the virtual environment (optional)
 
 ```zsh
 . venv/bin/activate
