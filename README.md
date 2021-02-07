@@ -91,6 +91,10 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.5.1
+
+- Bumping pre-commit to version 2.10.1
+
 ### 0.5.0
 
 - Added an option to run CI on Windows, Mac, and Linux
