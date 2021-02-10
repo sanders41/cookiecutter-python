@@ -25,10 +25,10 @@ jobs:
         poetry install
     - name: Isort check
       run: |
-        poetry run isort tests --check-only
+        poetry run isort {{cookiecutter.source_dir}} tests --check-only
     - name: Black check
       run: |
-        poetry run black tests --check
+        poetry run black {{cookiecutter.source_dir}} tests --check
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
