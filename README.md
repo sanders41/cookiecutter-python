@@ -93,6 +93,10 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.5.2
+
+- Fixed linting workflow
+
 ### 0.5.1
 
 - Bumping pre-commit to version 2.10.1
