@@ -93,6 +93,10 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.5.3
+
+- Minor change to black settings in pyproject.toml
+
 ### 0.5.2
 
 - Fixed linting workflow
