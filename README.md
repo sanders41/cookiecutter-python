@@ -93,6 +93,10 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.5.4
+
+- Bump tox from 3.21.4 to 3.22.0
+
 ### 0.5.3
 
 - Minor change to black settings in pyproject.toml
