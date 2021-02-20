@@ -93,6 +93,10 @@ Now the project is ready to use.
 
 ## Change log
 
+### 0.5.5
+
+- Bump mypy from 0.800 to 0.812
+
 ### 0.5.4
 
 - Bump tox from 3.21.4 to 3.22.0
