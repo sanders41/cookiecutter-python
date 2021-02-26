@@ -11,7 +11,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: {{cookiecutter.python_version}}
+        python-version: {{ cookiecutter.python_version }}
     - name: Install Poetry and add to path
       run: |
         curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -

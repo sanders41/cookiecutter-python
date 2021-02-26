@@ -1,11 +1,15 @@
 [tool.poetry]
-name = "{{cookiecutter.project_slug}}"
+name = "{{ cookiecutter.project_slug }}"
 version = "0.1.0"
-description = "{{cookiecutter.project_description}}"
-authors = ["{{cookiecutter.creator}} <{{cookiecutter.creator_email}}>"]
+description = "{{ cookiecutter.project_description }}"
+authors = ["{{ cookiecutter.creator }} <{{ cookiecutter.creator_email }}>"]
+{% if cookiecutter.license != "No License" -%}
+license = "{{ cookiecutter.license }}"
+{% endif -%}
+readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^{{cookiecutter.min_python_version}}"
+python = "^{{ cookiecutter.min_python_version }}"
 
 [tool.poetry.dev-dependencies]
 black = "^20.8b1"
@@ -22,7 +26,7 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.black]
-line-length = {{cookiecutter.max_line_length}}
+line-length = {{ cookiecutter.max_line_length }}
 include = '\.pyi?$'
 exclude = '''
 /(
@@ -44,9 +48,9 @@ exclude = '''
 
 [tool.isort]
 profile = "black"
-line_length = {{cookiecutter.max_line_length}}
-src_paths = ["{{cookiecutter.source_dir}}", "tests"]
+line_length = {{ cookiecutter.max_line_length }}
+src_paths = ["{{ cookiecutter.source_dir }}", "tests"]
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "--cov={{cookiecutter.source_dir}}"
+addopts = "--cov={{ cookiecutter.source_dir }}"

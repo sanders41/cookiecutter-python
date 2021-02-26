@@ -1,7 +1,7 @@
 {
   "project_name": "",
-  "project_slug": "{{cookiecutter.project_name.lower().strip().replace(' ', '-')}}",
-  "source_dir": "{{cookiecutter.project_name.lower().strip().replace(' ', '_')}}",
+  "project_slug": "{{ cookiecutter.project_name.lower().strip().replace(' ', '-') }}",
+  "source_dir": "{{ cookiecutter.project_name.lower().strip().replace(' ', '_') }}",
   "project_description": "",
   "creator": "",
   "creator_email": "",
@@ -12,7 +12,7 @@
   "github_action_python_test_versions": "3.8, 3.9",
   "tox_python_versions": "py38, py39",
   "max_line_length": 100,
-  "use_dependabot": true,
-  "use_continuous_deployment": false,
-  "multi_os_ci": false
+  "use_dependabot": ["yes", "no"],
+  "use_continuous_deployment": ["no", "yes"],
+  "multi_os_ci": ["no", "yes"]
 }

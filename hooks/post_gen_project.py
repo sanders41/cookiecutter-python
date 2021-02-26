@@ -7,15 +7,15 @@ GITHUB_DIR = ROOT_DIR.joinpath(".github")
 
 
 def main() -> None:
-    set_license("{{cookiecutter.license}}")
+    set_license("{{ cookiecutter.license }}")
 
-    use_dependabot = "{{cookiecutter.use_dependabot}}" == "True"
+    use_dependabot = "{{ cookiecutter.use_dependabot }}".lower() == "yes"
     set_dependabot(use_dependabot)
 
-    use_continuous_deployment = "{{cookiecutter.use_continuous_deployment}}" == "True"
+    use_continuous_deployment = "{{ cookiecutter.use_continuous_deployment }}".lower() == "yes"
     set_cd(use_continuous_deployment)
 
-    multi_os_ci = "{{cookiecutter.multi_os_ci}}" == "True"
+    multi_os_ci = "{{ cookiecutter.multi_os_ci }}".lower() == "yes"
     set_multi_os_ci(multi_os_ci)
 
     shutil.rmtree(ACTIONS_DIR)

@@ -263,7 +263,7 @@ def test_python_min_version(tmp_path):
         assert sys.exit == 4
 
 
-@pytest.mark.parametrize("use_dependabot, expected", [("True", True), ("False", False)])
+@pytest.mark.parametrize("use_dependabot, expected", [("yes", True), ("no", False)])
 def test_use_dependabot(project_default, use_dependabot, expected, tmp_path):
     project = project_default
     project["use_dependabot"] = use_dependabot
@@ -279,7 +279,7 @@ def test_use_dependabot(project_default, use_dependabot, expected, tmp_path):
         assert not file_path.exists()
 
 
-@pytest.mark.parametrize("use_continuous_deployment, expected", [("True", True), ("False", False)])
+@pytest.mark.parametrize("use_continuous_deployment, expected", [("yes", True), ("no", False)])
 def test_use_continuous_deployment(project_default, use_continuous_deployment, expected, tmp_path):
     project = project_default
     project["use_continuous_deployment"] = use_continuous_deployment
@@ -296,11 +296,10 @@ def test_use_continuous_deployment(project_default, use_continuous_deployment, e
         assert not file_path.exists()
 
 
-@pytest.mark.parametrize("multi_os_ci", [True, False, None])
+@pytest.mark.parametrize("multi_os_ci", ["yes", "no"])
 def test_multi_os_ci(project_default, multi_os_ci, tmp_path):
     project = project_default
-    if multi_os_ci:
-        project["multi_os_ci"] = multi_os_ci
+    project["multi_os_ci"] = multi_os_ci
 
     cookiecutter(str(COOKIECUTTER_ROOT), no_input=True, extra_context=project, output_dir=tmp_path)
 
