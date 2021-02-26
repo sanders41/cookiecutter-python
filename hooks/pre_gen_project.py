@@ -48,18 +48,6 @@ def validate():
         )
         sys.exit(4)
 
-    if "{{cookiecutter.use_dependabot}}" not in ["True", "False"]:
-        print("use_dependabot must be either True or False")  # noqa: T001
-        sys.exit(5)
-
-    if "{{cookiecutter.use_continuous_deployment}}" not in ["True", "False"]:
-        print("use Continuious Deployment must be etiher True or False")  # noqa: T001
-        sys.exit(5)
-
-    if "{{cookiecutter.multi_os_ci}}" not in ["True", "False"]:
-        print("multi_os_ci must be either True or False")  # noqa: T001
-        sys.exit(5)
-
 
 def exit_one(text_check, field_name):
     if not text_check.strip():

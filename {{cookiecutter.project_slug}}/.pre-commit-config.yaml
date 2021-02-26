@@ -16,15 +16,15 @@ repos:
     hooks:
     - id: black
       language_version: python3.8
-      args: [--line-length={{cookiecutter.max_line_length}}]
+      args: [--line-length={{ cookiecutter.max_line_length }}]
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v0.812
     hooks:
     - id: mypy
-      files: {{cookiecutter.source_dir}}/
+      files: {{ cookiecutter.source_dir }}/
   - repo: https://gitlab.com/pycqa/flake8
     rev: '3.8.4'
     hooks:
     - id: flake8
       additional_dependencies: [flake8-print]
-      args: [--max-line-length={{cookiecutter.max_line_length}}, --ignore=E231]
+      args: [--max-line-length={{ cookiecutter.max_line_length }}, --ignore=E231]
