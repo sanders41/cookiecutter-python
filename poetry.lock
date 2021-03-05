@@ -8,7 +8,7 @@ python-versions = "*"
 
 [[package]]
 name = "arrow"
-version = "1.0.0"
+version = "1.0.2"
 description = "Better dates & times for Python"
 category = "main"
 optional = false
@@ -162,11 +162,11 @@ pyflakes = ">=2.2.0,<2.3.0"
 
 [[package]]
 name = "identify"
-version = "1.5.14"
+version = "2.1.0"
 description = "File identification library for Python"
 category = "dev"
 optional = false
-python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
+python-versions = ">=3.6.1"
 
 [package.extras]
 license = ["editdistance"]
@@ -191,7 +191,7 @@ python-versions = "*"
 name = "isort"
 version = "5.7.0"
 description = "A Python utility / library to sort Python imports."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6,<4.0"
 
@@ -498,7 +498,7 @@ testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "d4929cc28e904e3e1c3eb9a229511f388f40695749bf0f0e6193980c87d9447a"
+content-hash = "5b03630ab71262fec11c13f7807098841b39b7f104d06f24cb2060abf894cfcd"
 
 [metadata.files]
 appdirs = [
@@ -506,8 +506,8 @@ appdirs = [
     {file = "appdirs-1.4.4.tar.gz", hash = "sha256:7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"},
 ]
 arrow = [
-    {file = "arrow-1.0.0-py3-none-any.whl", hash = "sha256:3d9c973acbd30f8a87cb816c4d1ac14fbcd44289c1448e8a8eb802ecc7504fad"},
-    {file = "arrow-1.0.0.tar.gz", hash = "sha256:ca68479d4b674e35179104f53e2bf72a730847bbd301e7c0b3642dd06e669797"},
+    {file = "arrow-1.0.2-py3-none-any.whl", hash = "sha256:cb1b7bc3a07eb1c1e98ccc740627460c9891636642bcf03c4097b71d8bc5ca1d"},
+    {file = "arrow-1.0.2.tar.gz", hash = "sha256:5df8e632e9158c48f42f68a742068bcfc1c0181cbe7543e4cda6089bb287a305"},
 ]
 atomicwrites = [
     {file = "atomicwrites-1.4.0-py2.py3-none-any.whl", hash = "sha256:6d1784dea7c0c8d4a5172b6c620f40b6e4cbfdf96d783691f2e1302a7b88e197"},
@@ -561,8 +561,8 @@ flake8 = [
     {file = "flake8-3.8.4.tar.gz", hash = "sha256:aadae8761ec651813c24be05c6f7b4680857ef6afaae4651a4eccaef97ce6c3b"},
 ]
 identify = [
-    {file = "identify-1.5.14-py2.py3-none-any.whl", hash = "sha256:e0dae57c0397629ce13c289f6ddde0204edf518f557bfdb1e56474aa143e77c3"},
-    {file = "identify-1.5.14.tar.gz", hash = "sha256:de7129142a5c86d75a52b96f394d94d96d497881d2aaf8eafe320cdbe8ac4bcc"},
+    {file = "identify-2.1.0-py2.py3-none-any.whl", hash = "sha256:2a5fdf2f5319cc357eda2550bea713a404392495961022cf2462624ce62f0f46"},
+    {file = "identify-2.1.0.tar.gz", hash = "sha256:2179e7359471ab55729f201b3fdf7dc2778e221f868410fedcb0987b791ba552"},
 ]
 idna = [
     {file = "idna-2.10-py2.py3-none-any.whl", hash = "sha256:b97d804b1e9b523befed77c48dacec60e6dcb0b5391d57af6a65a312a90648c0"},
