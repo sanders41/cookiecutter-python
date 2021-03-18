@@ -13,6 +13,6 @@
   "tox_python_versions": "py38, py39",
   "max_line_length": 100,
   "use_dependabot": ["yes", "no"],
-  "use_continuous_deployment": ["no", "yes"],
-  "multi_os_ci": ["no", "yes"]
+  "use_continuous_deployment": ["yes", "no"],
+  "multi_os_ci": ["yes", "no"]
 }
