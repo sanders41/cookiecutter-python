@@ -1,6 +1,7 @@
 # Python Cookiecutter Template
 
 [![Tests Status](https://github.com/sanders41/cookiecutter-python/workflows/Testing/badge.svg?branch=main&event=push)](https://github.com/sanders41/cookiecutter-python/actions?query=workflow%3ATesting+branch%3Amain+event%3Apush)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/sanders41/cookiecutter-python/main.svg)](https://results.pre-commit.ci/latest/github/sanders41/cookiecutter-python/main)
 
 Generates a Python project structure with Poetry for package management and github actions for continuious integration and continuous deployment.
 
