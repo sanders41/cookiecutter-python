@@ -92,8 +92,8 @@ def test_exit_2(license, tmp_path):
         "project_name": "Test Project",
         "creator": "Some Person",
         "creator_email": "tester@person.com",
+        "license": license,
     }
-    project["license"] = license
 
     with pytest.raises(FailedHookException):
         cookiecutter(
@@ -110,8 +110,8 @@ def test_exit_3(copyright_year, tmp_path):
         "creator": "Some Person",
         "creator_email": "tester@person.com",
         "license": "MIT",
+        "copyright_year": copyright_year,
     }
-    project["copyright_year"] = copyright_year
 
     with pytest.raises(FailedHookException):
         cookiecutter(
