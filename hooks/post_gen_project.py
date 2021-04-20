@@ -7,6 +7,8 @@ GITHUB_DIR = ROOT_DIR.joinpath(".github")
 
 
 def main() -> None:
+    Path(".github/workflows").mkdir(parents=True, exist_ok=True)
+
     set_license("{{ cookiecutter.license }}")
 
     use_dependabot = "{{ cookiecutter.use_dependabot }}".lower() == "yes"

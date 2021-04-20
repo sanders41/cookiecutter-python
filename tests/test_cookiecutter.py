@@ -50,7 +50,6 @@ def test_project_directories(project_default, tmp_path):
         out_dir / ".github/workflows",
         out_dir / project_default.get("source_dir"),
         out_dir / "tests",
-        out_dir / "tests/unit",
     ]
 
     for dir in EXPECTED_DIRS:
@@ -93,8 +92,8 @@ def test_exit_2(license, tmp_path):
         "project_name": "Test Project",
         "creator": "Some Person",
         "creator_email": "tester@person.com",
+        "license": license,
     }
-    project["license"] = license
 
     with pytest.raises(FailedHookException):
         cookiecutter(
@@ -111,8 +110,8 @@ def test_exit_3(copyright_year, tmp_path):
         "creator": "Some Person",
         "creator_email": "tester@person.com",
         "license": "MIT",
+        "copyright_year": copyright_year,
     }
-    project["copyright_year"] = copyright_year
 
     with pytest.raises(FailedHookException):
         cookiecutter(
@@ -218,18 +217,6 @@ def test_flake8(project_default, tmp_path):
     out_dir = tmp_path / project_default["project_slug"]
 
     file_path = out_dir / ".flake8"
-    assert file_path.exists()
-    assert no_curlies(file_path)
-
-
-def test_workflow_linting(project_default, tmp_path):
-    cookiecutter(
-        str(COOKIECUTTER_ROOT), no_input=True, extra_context=project_default, output_dir=tmp_path
-    )
-
-    out_dir = tmp_path / project_default["project_slug"]
-
-    file_path = out_dir / ".github/workflows/linting.yaml"
     assert file_path.exists()
     assert no_curlies(file_path)
 
