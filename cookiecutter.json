@@ -14,5 +14,6 @@
   "max_line_length": 100,
   "use_dependabot": ["yes", "no"],
   "use_continuous_deployment": ["yes", "no"],
+  "use_release_drafter": ["yes", "no"],
   "multi_os_ci": ["yes", "no"]
 }

@@ -17,6 +17,9 @@ def main() -> None:
     use_continuous_deployment = "{{ cookiecutter.use_continuous_deployment }}".lower() == "yes"
     set_cd(use_continuous_deployment)
 
+    use_release_drafter = "{{ cookiecutter.use_release_drafter }}".lower() == "yes"
+    set_release_drafter(use_release_drafter)
+
     multi_os_ci = "{{ cookiecutter.multi_os_ci }}".lower() == "yes"
     set_multi_os_ci(multi_os_ci)
 
@@ -36,6 +39,18 @@ def set_dependabot(use_dependabot: bool) -> None:
         shutil.copy(
             ACTIONS_DIR / "dependabot.yaml",
             GITHUB_DIR / "dependabot.yaml",
+        )
+
+
+def set_release_drafter(use_release_drafter: bool) -> None:
+    if use_release_drafter:
+        shutil.copy(
+            ACTIONS_DIR / "release_draft_template.yaml",
+            GITHUB_DIR / "release_draft_template.yaml",
+        )
+        shutil.copy(
+            ACTIONS_DIR / "release_drafter.yaml",
+            GITHUB_DIR / "workflows" / "release_drafter.yaml",
         )
 
 

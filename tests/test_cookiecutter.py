@@ -283,6 +283,26 @@ def test_use_continuous_deployment(project_default, use_continuous_deployment, e
         assert not file_path.exists()
 
 
+@pytest.mark.parametrize("use_release_drafter, expected", [("yes", True), ("no", False)])
+def test_use_release_drafter(project_default, use_release_drafter, expected, tmp_path):
+    project = project_default
+    project_default["use_release_drafter"] = use_release_drafter
+
+    cookiecutter(str(COOKIECUTTER_ROOT), no_input=True, extra_context=project, output_dir=tmp_path)
+
+    file_path_action = tmp_path.joinpath(project["project_slug"]).joinpath(
+        ".github/workflows/release_drafter.yaml"
+    )
+    file_path_action = tmp_path.joinpath(project["project_slug"]).joinpath(
+        ".github/release_draft_template.yaml"
+    )
+
+    if expected:
+        assert file_path_action.exists()
+    else:
+        assert not file_path_action.exists()
+
+
 @pytest.mark.parametrize("multi_os_ci", ["yes", "no"])
 def test_multi_os_ci(project_default, multi_os_ci, tmp_path):
     project = project_default
