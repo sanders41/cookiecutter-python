@@ -2,9 +2,8 @@ import shutil
 from pathlib import Path
 
 ROOT_DIR = Path().absolute()
-VSCODE_DIR = ROOT_DIR.joinpath(".vscode")
-ACTIONS_DIR = ROOT_DIR.joinpath("actions")
 GITHUB_DIR = ROOT_DIR.joinpath(".github")
+ACTIONS_DIR = ROOT_DIR.joinpath("actions")
 
 
 def main() -> None:
@@ -12,8 +11,10 @@ def main() -> None:
 
     set_license("{{ cookiecutter.license }}")
 
-    if "{{ cookiecutter.include_vscode_settings }}".lower() == "no":
-        shutil.rmtree(VSCODE_DIR)
+    if "{{ cookiecutter.include_vscode_settings }}".lower() == "yes":
+        shutil.move(ROOT_DIR / "vscode", ROOT_DIR / ".vscode")
+    else:
+        shutil.rmtree(ROOT_DIR / "vscode")
 
     use_dependabot = "{{ cookiecutter.use_dependabot }}".lower() == "yes"
     set_dependabot(use_dependabot)
