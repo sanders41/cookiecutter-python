@@ -16,6 +16,12 @@ Generates a Python project structure with Poetry for package management and gith
 - pytest-cov
 - tox
 
+
+## VS Code settings
+
+If yes is selected for `include_vscode_settings` the generated project will contain a `.vscode/settings.json`
+file that will automatically run Black when files are saved.
+
 ## How to use
 
 First make sure you have cookiecutter installed. Instructions for installing can be found [here](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html).
