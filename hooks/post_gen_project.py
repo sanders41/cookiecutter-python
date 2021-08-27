@@ -2,14 +2,19 @@ import shutil
 from pathlib import Path
 
 ROOT_DIR = Path().absolute()
-ACTIONS_DIR = ROOT_DIR.joinpath("actions")
 GITHUB_DIR = ROOT_DIR.joinpath(".github")
+ACTIONS_DIR = ROOT_DIR.joinpath("actions")
 
 
 def main() -> None:
     Path(".github/workflows").mkdir(parents=True, exist_ok=True)
 
     set_license("{{ cookiecutter.license }}")
+
+    if "{{ cookiecutter.include_vscode_settings }}".lower() == "yes":
+        shutil.move(ROOT_DIR / "vscode", ROOT_DIR / ".vscode")
+    else:
+        shutil.rmtree(ROOT_DIR / "vscode")
 
     use_dependabot = "{{ cookiecutter.use_dependabot }}".lower() == "yes"
     set_dependabot(use_dependabot)
