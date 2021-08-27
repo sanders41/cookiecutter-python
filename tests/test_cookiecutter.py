@@ -121,6 +121,21 @@ def test_exit_3(copyright_year, tmp_path):
         assert sys.exit == 3
 
 
+@pytest.mark.parametrize("include_vscode_settings, expected", [("yes", True), ("no", False)])
+def test_vscode_settings(project_default, include_vscode_settings, expected, tmp_path):
+    project = project_default
+    project["include_vscode_settings"] = include_vscode_settings
+
+    cookiecutter(str(COOKIECUTTER_ROOT), no_input=True, extra_context=project, output_dir=tmp_path)
+
+    file_path = tmp_path / project["project_slug"] / ".vscode" / "settings.json"
+
+    if expected:
+        assert file_path.exists()
+    else:
+        assert not file_path.exists()
+
+
 @pytest.mark.parametrize("license", ["MIT", "Apache 2.0", "GNU General Public License v3.0"])
 def test_license(project_default, license, tmp_path):
     project = project_default

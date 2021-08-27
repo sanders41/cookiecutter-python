@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cookiecutter-python"
-version = "0.11.5"
+version = "0.12.0"
 description = "A cookiecutter template to setup a generic Python project with Poetry"
 authors = ["Paul Sanders <psanders1@gmail.com>"]
 license = "MIT"
