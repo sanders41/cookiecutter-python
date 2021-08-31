@@ -16,7 +16,6 @@ Generates a Python project structure with Poetry for package management and gith
 - pytest-cov
 - tox
 
-
 ## VS Code settings
 
 If yes is selected for `include_vscode_settings` the generated project will contain a `.vscode/settings.json`
