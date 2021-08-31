@@ -12,12 +12,12 @@ readme = "README.md"
 python = "^{{ cookiecutter.min_python_version }}"
 
 [tool.poetry.dev-dependencies]
-black = "^21.7b0"
+black = "^21.8b0"
 flake8 = "^3.9.2"
 isort = "^5.9.3"
 mypy = "^0.910"
-pre-commit = "^2.14.0"
-pytest = "^6.2.4"
+pre-commit = "^2.14.1"
+pytest = "^6.2.5"
 pytest-cov = "^2.12.1"
 tox = "^3.24.3"
 
