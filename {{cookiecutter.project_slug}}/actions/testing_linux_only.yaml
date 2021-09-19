@@ -29,8 +29,8 @@ jobs:
       id: poetry-cache
       with:
         path: .venv
-        key: venv-${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
-        restore-keys: venv-${{ runner.os }}-poetry-
+        key: {{ "venv-${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}" }}
+        restore-keys: {{ "venv-${{ runner.os }}-poetry-" }}
     - name: Install Dependencies
       if: steps.poetry-cache.outputs.cache-hit != 'true'
       run: poetry install
@@ -75,8 +75,8 @@ jobs:
       id: poetry-cache
       with:
         path: .venv
-        key: venv-${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
-        restore-keys: venv-${{ runner.os }}-poetry-
+        key: {{ "venv-${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}" }}
+        restore-keys: {{ "venv-${{ runner.os }}-poetry-" }}
     - name: Install Dependencies
       if: steps.poetry-cache.outputs.cache-hit != 'true'
       run: poetry install
