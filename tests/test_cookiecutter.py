@@ -322,6 +322,8 @@ def test_use_release_drafter(project_default, use_release_drafter, expected, tmp
 def test_multi_os_ci(project_default, multi_os_ci, tmp_path):
     project = project_default
     project["multi_os_ci"] = multi_os_ci
+    project["min_python_version"] = 3.8
+    project["github_action_python_test_versions"] = "3.8, 3.9, 3.10"
 
     cookiecutter(str(COOKIECUTTER_ROOT), no_input=True, extra_context=project, output_dir=tmp_path)
 

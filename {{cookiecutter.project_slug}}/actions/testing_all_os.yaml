@@ -15,7 +15,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: {{ cookiecutter.python_version }}
+        python-version: {% if cookiecutter.python_version[-1:] == "0" %}"{{ cookiecutter.python_version }}"{% else %}{{ cookiecutter.python_version }}{% endif %}
     - name: Install Poetry and add to path
       run: |
         curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
@@ -53,7 +53,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [{{ cookiecutter.github_action_python_test_versions }}]
+        python-version: [{% for version in cookiecutter.github_action_python_test_versions.split() %}{% if version.replace(",", "")[-1:] == "0" %}{% if version[-1:] == "," %}"{{ version }}" {% else %}"{{ version }}"{% endif %}{% else %}{% if version[-1:] == "," %}{{ version }} {% else %}{{ version }}{% endif %}{% endif %}{% endfor %}]
         os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: {{ "${{ matrix.os }}" }}
     steps:

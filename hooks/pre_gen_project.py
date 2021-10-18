@@ -40,9 +40,17 @@ def validate():
     github_action_python_test_versions = [
         x.strip() for x in "{{ cookiecutter.github_action_python_test_versions }}".split(",")
     ]
-    github_action_python_test_versions.sort()
+    test_version_checks = [
+        [int(y) for y in x.split(".")] for x in github_action_python_test_versions
+    ]
+    test_version_checks.sort(key=lambda x: (x[0], x[1]))
+    min_python_version_split = [int(x) for x in min_python_version.split(".")]
 
-    if float(github_action_python_test_versions[0]) < float(min_python_version):
+    if (
+        test_version_checks[0][0] < min_python_version_split[0]
+        or test_version_checks[0][0] == min_python_version_split[0]
+        and test_version_checks[0][1] < min_python_version_split[1]
+    ):
         print(  # noqa: T001
             "The minimum Python version is greater than the lowest version used in the github actions tests"  # noqa: E501
         )
