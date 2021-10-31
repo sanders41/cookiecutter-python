@@ -46,7 +46,7 @@ jobs:
         poetry run flake8 {{ cookiecutter.source_dir }} tests --count --exit-zero --max-complexity=10 --max-line-length={{ cookiecutter.max_line_length }} --statistics
     - name: mypy check
       run: |
-        poetry run mypy {{ cookiecutter.source_dir }}
+        poetry run mypy .
 
   testing:
     strategy:
