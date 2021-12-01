@@ -19,8 +19,8 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Get full Python version
-        id: full-python-version
-        run: echo ::set-output name=version::$(python -c "import sys; print('-'.join(str(v) for v in sys.version_info))")
+      id: full-python-version
+      run: echo ::set-output name=version::$(python -c "import sys; print('-'.join(str(v) for v in sys.version_info))")
     - name: Install Poetry and add to path
       run: |
         curl -sSL https://install.python-poetry.org/install-poetry.py | python -
