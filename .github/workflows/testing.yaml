@@ -18,6 +18,9 @@ jobs:
       uses: actions/setup-python@v2.3.1
       with:
         python-version: ${{ matrix.python-version }}
+    - name: Get full Python version
+      id: full-python-version
+      run: echo ::set-output name=version::$(python -c "import sys; print('-'.join(str(v) for v in sys.version_info))")
     - name: Install Poetry and add to path
       run: |
         curl -sSL https://install.python-poetry.org/install-poetry.py | python -
@@ -31,7 +34,7 @@ jobs:
       id: poetry-cache
       with:
         path: .venv
-        key: venv-${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+        key: venv-${{ runner.os }}-${{ steps.full-python-version.outputs.version }}-${{ hashFiles('**/poetry.lock') }}
         restore-keys: venv-${{ runner.os }}-poetry-
     - name: Ensure cache is healthy
       if: steps.poetry-cache.outputs.cache-hit == 'true'
