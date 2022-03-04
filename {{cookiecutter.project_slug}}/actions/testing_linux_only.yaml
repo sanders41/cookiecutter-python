@@ -9,9 +9,9 @@ jobs:
   linting:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: {% if cookiecutter.python_version[-1:] == "0" %}"{{ cookiecutter.python_version }}"{% else %}{{ cookiecutter.python_version }}{% endif %}
     - name: Get full Python version
@@ -60,9 +60,9 @@ jobs:
         python-version: [{% for version in cookiecutter.github_action_python_test_versions.split() %}{% if version.replace(",", "")[-1:] == "0" %}{% if version[-1:] == "," %}"{{ version }}" {% else %}"{{ version }}"{% endif %}{% else %}{% if version[-1:] == "," %}{{ version }} {% else %}{{ version }}{% endif %}{% endif %}{% endfor %}]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set up Python {{ "${{ matrix.python-version }}" }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: {{ "${{ matrix.python-version }}" }}
     - name: Get full Python version
