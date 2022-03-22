@@ -61,4 +61,4 @@ disallow_untyped_defs = false
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "--cov={{ cookiecutter.source_dir }}"
+addopts = "--cov={{ cookiecutter.source_dir }} --cov-report term-missing"
