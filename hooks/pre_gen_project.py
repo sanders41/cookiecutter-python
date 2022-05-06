@@ -16,24 +16,24 @@ def validate():
     copyright_year = "{{ cookiecutter.copyright_year }}"
 
     if license == "MIT" and not copyright_year.strip():
-        print("You must specify a copyright year for the MIT license")  # noqa: T001
+        print("You must specify a copyright year for the MIT license")  # noqa: T201
         sys.exit(2)
 
     if license == "GNU General Public License v3.0" and not copyright_year.strip():
-        print(  # noqa: T001
+        print(  # noqa: T201
             "You must specify a copyright year for the GNU General Public License v3.0"
         )
         sys.exit(2)
 
     year_error_msg = "The copyright year entered is not a valid year"
     if copyright_year.strip() and len(copyright_year) != 4:
-        print(year_error_msg)  # noqa: T001
+        print(year_error_msg)  # noqa: T201
         sys.exit(3)
     if len(copyright_year) == 4:
         try:
             int(copyright_year)
         except ValueError:
-            print(year_error_msg)  # noqa: T001
+            print(year_error_msg)  # noqa: T201
             sys.exit(3)
 
     min_python_version = "{{ cookiecutter.min_python_version }}"
@@ -51,7 +51,7 @@ def validate():
         or test_version_checks[0][0] == min_python_version_split[0]
         and test_version_checks[0][1] < min_python_version_split[1]
     ):
-        print(  # noqa: T001
+        print(  # noqa: T201
             "The minimum Python version is greater than the lowest version used in the github actions tests"  # noqa: E501
         )
         sys.exit(4)
@@ -59,7 +59,7 @@ def validate():
 
 def exit_one(text_check, field_name):
     if not text_check.strip():
-        print(f"You must specify a {field_name} to use this template.")  # noqa: T001
+        print(f"You must specify a {field_name} to use this template.")  # noqa: T201
         sys.exit(1)
 
 
