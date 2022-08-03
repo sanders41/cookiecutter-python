@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: {% if cookiecutter.python_version[-1:] == "0" %}"{{ cookiecutter.python_version }}"{% else %}{{ cookiecutter.python_version }}{% endif %}
     - name: Install Poetry and add to path
