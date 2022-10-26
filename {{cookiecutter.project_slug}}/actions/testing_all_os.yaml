@@ -13,7 +13,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: {% if cookiecutter.python_version[-1:] == "0" %}"{{ cookiecutter.python_version }}"{% else %}{{ cookiecutter.python_version }}{% endif %}
+        python-version: "{{ cookiecutter.python_version }}"
     - name: Get full Python version
       id: full-python-version
       run: echo ::set-output name=version::$(python -c "import sys; print('-'.join(str(v) for v in sys.version_info))")
@@ -56,7 +56,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [{% for version in cookiecutter.github_action_python_test_versions.split() %}{% if version.replace(",", "")[-1:] == "0" %}{% if version[-1:] == "," %}"{{ version }}" {% else %}"{{ version }}"{% endif %}{% else %}{% if version[-1:] == "," %}{{ version }} {% else %}{{ version }}{% endif %}{% endif %}{% endfor %}]
+        python-version: [{% for version in cookiecutter.github_action_python_test_versions.split() %}{% if version[-1:] == "," %}"{{ version[:-1] }}", {% else %}"{{ version }}"{% endif %}{% endfor %}]
         os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: {{ "${{ matrix.os }}" }}
     steps:
