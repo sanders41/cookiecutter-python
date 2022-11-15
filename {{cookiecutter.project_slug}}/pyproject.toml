@@ -11,15 +11,26 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^{{ cookiecutter.min_python_version }}"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 black = ">=22.10.0"
-flake8 = ">=5.0.4"
 isort = ">=5.10.1"
 mypy = ">=0.982"
 pre-commit = ">=2.20.0"
 pytest = ">=7.2.0"
 pytest-cov = ">=4.0.0"
 tox = ">=3.26.0"
+ruff = ">=0.0.120"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.egg
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -62,3 +73,7 @@ disallow_untyped_defs = false
 [tool.pytest.ini_options]
 minversion = "6.0"
 addopts = "--cov={{ cookiecutter.source_dir }} --cov-report term-missing"
+
+[tool.ruff]
+select=["T201", "T203"]
+ignore=["E501", "D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107"]
