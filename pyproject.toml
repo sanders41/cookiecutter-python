@@ -15,7 +15,7 @@ black = ">=22.6.0"
 isort = ">=5.10.1"
 pytest = ">=7.1.2"
 pre-commit = ">=2.20.0"
-ruff = ">=0.0.120"
+ruff = ">=0.0.162"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
