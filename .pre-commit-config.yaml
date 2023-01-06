@@ -16,6 +16,6 @@ repos:
       language_version: python3
       args: [--line-length=100]
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.206
+    rev: v0.0.211
     hooks:
     - id: ruff
