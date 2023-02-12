@@ -43,12 +43,9 @@ jobs:
     - name: Black check
       run: |
         poetry run black {{ cookiecutter.source_dir }} tests --check
-    - name: Lint with flake8
+    - name: Lint with ruff
       run: |
-        # stop the build if there are Python syntax errors or undefined names
-        poetry run flake8 {{ cookiecutter.source_dir }} tests --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        poetry run flake8 {{ cookiecutter.source_dir }} tests --count --exit-zero --max-complexity=10 --max-line-length={{ cookiecutter.max_line_length }} --statistics
+        poetry run ruff {{ cookiecutter.source_dir }} tests
     - name: mypy check
       run: |
         poetry run mypy .
@@ -67,7 +64,7 @@ jobs:
         python-version: {{ "${{ matrix.python-version }}" }}
     - name: Get full Python version
       id: full-python-version
-      run: echo ::set-output name=version::$(python -c "import sys; print('-'.join(str(v) for v in sys.version_info))")
+      run: echo version=$(python -c "import sys; print('-'.join(str(v) for v in sys.version_info))") >> $GITHUB_OUTPUT
     - name: Install Poetry and add to path on Windows
       if: matrix.os == 'windows-latest'
       run: |

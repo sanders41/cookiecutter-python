@@ -224,18 +224,6 @@ def test_gitignore(project_default, tmp_path):
     assert no_curlies(file_path)
 
 
-def test_flake8(project_default, tmp_path):
-    cookiecutter(
-        str(COOKIECUTTER_ROOT), no_input=True, extra_context=project_default, output_dir=tmp_path
-    )
-
-    out_dir = tmp_path / project_default["project_slug"]
-
-    file_path = out_dir / ".flake8"
-    assert file_path.exists()
-    assert no_curlies(file_path)
-
-
 def test_workflow_testing(project_default, tmp_path):
     cookiecutter(
         str(COOKIECUTTER_ROOT), no_input=True, extra_context=project_default, output_dir=tmp_path
