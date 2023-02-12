@@ -8,7 +8,7 @@ Generates a Python project structure with Poetry for package management and gith
 ## Dev dependencies that are included
 
 - black
-- flake8
+- ruff
 - isort
 - mypy
 - pre-commit
