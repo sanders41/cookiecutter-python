@@ -5,12 +5,7 @@
   "project_description": "",
   "creator": "",
   "creator_email": "",
-  "license": [
-    "MIT",
-    "Apache 2.0",
-    "GNU General Public License v3.0",
-    "No License"
-  ],
+  "license": ["MIT", "Apache 2.0", "No License"],
   "copyright_year": "",
   "python_version": "3.11",
   "min_python_version": 3.7,
