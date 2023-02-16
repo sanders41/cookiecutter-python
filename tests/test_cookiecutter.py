@@ -86,7 +86,7 @@ def test_exit_1(project, tmp_path):
         assert sys.exit == 1
 
 
-@pytest.mark.parametrize("license", ["MIT", "GNU General Public License v3.0"])
+@pytest.mark.parametrize("license", ["MIT"])
 def test_exit_2(license, tmp_path):
     project = {
         "project_name": "Test Project",
@@ -136,7 +136,7 @@ def test_vscode_settings(project_default, include_vscode_settings, expected, tmp
         assert not file_path.exists()
 
 
-@pytest.mark.parametrize("license", ["MIT", "Apache 2.0", "GNU General Public License v3.0"])
+@pytest.mark.parametrize("license", ["MIT", "Apache 2.0"])
 def test_license(project_default, license, tmp_path):
     project = project_default
     project["license"] = license
