@@ -17,7 +17,7 @@
   "github_action_python_test_versions": "3.7, 3.8, 3.9, 3.10, 3.11",
   "tox_python_versions": "py37, py38, py39, py310, py311",
   "max_line_length": 100,
-  "include_vscode_settings": ["yes", "no"],
+  "include_vscode_settings": ["no", "yes"],
   "use_dependabot": ["yes", "no"],
   "use_continuous_deployment": ["yes", "no"],
   "use_release_drafter": ["yes", "no"],
