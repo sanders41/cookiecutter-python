@@ -48,6 +48,6 @@ line_length = 100
 src_paths = ["tests"]
 
 [tool.ruff]
-select=["T201", "T203"]
-ignore=["E501", "D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107"]
+select=["E", "F", "T201", "T203"]
+ignore=["E501"]
 exclude=["{{{{cookiecutter.project_slug}}}}"]

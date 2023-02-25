@@ -65,4 +65,4 @@ addopts = "--cov={{ cookiecutter.source_dir }} --cov-report term-missing"
 
 [tool.ruff]
 select=["E", "F", "T201", "T203"]
-ignore=["E501", "D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107"]
+ignore=["E501"]
