@@ -12,7 +12,6 @@ cookiecutter = ">=2.1.1"
 
 [tool.poetry.group.dev.dependencies]
 black = ">=22.12.0"
-isort = ">=5.10.1"
 pytest = ">=7.2.0"
 pre-commit = ">=2.20.0"
 ruff = ">=0.0.176"
@@ -42,12 +41,9 @@ exclude = '''
 )/
 '''
 
-[tool.isort]
-profile = "black"
-line_length = 100
-src_paths = ["tests"]
-
 [tool.ruff]
-select=["E", "F", "T201", "T203"]
-ignore=["E501"]
-exclude=["{{{{cookiecutter.project_slug}}}}"]
+select = ["E", "F", "T201", "T203", "I001"]
+ignore = ["E501"]
+exclude = ["{{{{cookiecutter.project_slug}}}}"]
+line-length = 100
+fix = true
