@@ -14,11 +14,11 @@ python = "^{{ cookiecutter.min_python_version }}"
 [tool.poetry.group.dev.dependencies]
 black = ">=23.3.0"
 mypy = ">=1.2.0"
-pre-commit = ">=3.2.2"
+pre-commit = ">=3.3.1"
 pytest = ">=7.3.0"
 pytest-cov = ">=4.0.0"
-tox = ">=4.4.7"
-ruff = ">=0.0.261"
+tox = ">=4.5.1"
+ruff = ">=0.0.265"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
