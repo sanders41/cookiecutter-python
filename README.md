@@ -9,12 +9,10 @@ Generates a Python project structure with Poetry for package management and gith
 
 - black
 - ruff
-- isort
 - mypy
 - pre-commit
 - pytest
 - pytest-cov
-- tox
 
 ## VS Code settings
 
@@ -43,7 +41,6 @@ You will be asked to fill in the following information:
 - copyright_year: The year to use for the copyright year in the license file. Required for MIT and GNU General Public License v3.0 licenses
 - python_version: The minimum version of Python that can be used for the project. By default 3.9 will be used.
 - github_action_python_test_versions: The versions of Python that should be used in the CI tests. By default "3.8, 3.9" is used
-- tox_python_version: The version of Python that tox should use for testing. By default py38, py39 is used
 - max_line_length: The maximum allowed line length. By default 100 is used
 - use_dependabot: Adds a GitHub action for dependabot: Default = True
 - use_continuous_deployment: Adds a workflow for continous deployment to pypi: Default = False

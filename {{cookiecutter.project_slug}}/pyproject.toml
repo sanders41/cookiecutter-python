@@ -17,7 +17,6 @@ mypy = ">=1.2.0"
 pre-commit = ">=3.3.1"
 pytest = ">=7.3.0"
 pytest-cov = ">=4.0.0"
-tox = ">=4.5.1"
 ruff = ">=0.0.265"
 
 [build-system]
