@@ -60,5 +60,5 @@ addopts = "--cov={{ cookiecutter.source_dir }} --cov-report term-missing"
 select = ["E", "F", "UP", "I001", "T201", "T203"]
 ignore = ["E501"]
 line-length = {{ cookiecutter.max_line_length }}
-fix = true
 target-version = "py{{ cookiecutter.min_python_version.replace('.', '').replace('^', '') }}"
+fix = true
