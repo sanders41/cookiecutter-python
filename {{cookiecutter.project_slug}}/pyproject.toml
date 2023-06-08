@@ -57,7 +57,8 @@ minversion = "6.0"
 addopts = "--cov={{ cookiecutter.source_dir }} --cov-report term-missing"
 
 [tool.ruff]
-select = ["E", "F", "T201", "T203", "I001"]
+select = ["E", "F", "UP", "I001", "T201", "T203"]
 ignore = ["E501"]
 line-length = {{ cookiecutter.max_line_length }}
+target-version = "py{{ cookiecutter.min_python_version.replace('.', '').replace('^', '') }}"
 fix = true
