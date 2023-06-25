@@ -11,7 +11,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: {% if cookiecutter.python_version[-1:] == "0" %}"{{ cookiecutter.python_version }}"{% else %}{{ cookiecutter.python_version }}{% endif %}
+        python-version: "{{ cookiecutter.python_version }}"
     - name: Install Poetry and add to path
       run: |
         curl -sSL https://install.python-poetry.org/install-poetry.py | python -
