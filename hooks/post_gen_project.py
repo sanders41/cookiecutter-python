@@ -34,37 +34,37 @@ def main() -> None:
 def set_cd(use_continuous_deployment: bool) -> None:
     if use_continuous_deployment:
         shutil.copy(
-            ACTIONS_DIR / "pypi_publish.yaml",
-            GITHUB_DIR / "workflows" / "pypi_publish.yaml",
+            ACTIONS_DIR / "pypi_publish.yml",
+            GITHUB_DIR / "workflows" / "pypi_publish.yml",
         )
 
 
 def set_dependabot(use_dependabot: bool) -> None:
     if use_dependabot:
         shutil.copy(
-            ACTIONS_DIR / "dependabot.yaml",
-            GITHUB_DIR / "dependabot.yaml",
+            ACTIONS_DIR / "dependabot.yml",
+            GITHUB_DIR / "dependabot.yml",
         )
 
 
 def set_release_drafter(use_release_drafter: bool) -> None:
     if use_release_drafter:
         shutil.copy(
-            ACTIONS_DIR / "release_draft_template.yaml",
-            GITHUB_DIR / "release_draft_template.yaml",
+            ACTIONS_DIR / "release_draft_template.yml",
+            GITHUB_DIR / "release_draft_template.yml",
         )
         shutil.copy(
-            ACTIONS_DIR / "release_drafter.yaml",
-            GITHUB_DIR / "workflows" / "release_drafter.yaml",
+            ACTIONS_DIR / "release_drafter.yml",
+            GITHUB_DIR / "workflows" / "release_drafter.yml",
         )
 
 
 def set_multi_os_ci(multi_os_ci: bool) -> None:
     if multi_os_ci:
-        shutil.copy(ACTIONS_DIR / "testing_all_os.yaml", GITHUB_DIR / "workflows" / "testing.yaml")
+        shutil.copy(ACTIONS_DIR / "testing_all_os.yml", GITHUB_DIR / "workflows" / "testing.yml")
     else:
         shutil.copy(
-            ACTIONS_DIR / "testing_linux_only.yaml", GITHUB_DIR / "workflows" / "testing.yaml"
+            ACTIONS_DIR / "testing_linux_only.yml", GITHUB_DIR / "workflows" / "testing.yml"
         )
 
 
